@@ -39,7 +39,7 @@ test('auto-index planner resolves project subfolders under ~/Dev and asks outsid
 
   // Already indexed workspace
   const indexedPlan = resolveAutoIndexPlan(
-    '/Users/gc/Dev/MyProject/dsh-plugin/dsh-zvec-grep/benchmarks/notebooklm-py-20261025/workspace',
+    '/Users/gc/Dev/MyProject/dsh-plugins/dsh-zvec-grep/benchmarks/notebooklm-py-20261025/workspace',
     { autoIndexRoots: ['~/Dev'] },
   );
   assert.equal(indexedPlan.kind, 'already-indexed');
@@ -52,9 +52,9 @@ test('auto-index planner resolves project subfolders under ~/Dev and asks outsid
   assert.equal(subDirPlan.kind, 'auto-index');
   assert.equal(subDirPlan.targetRoot, '/Users/gc/Dev/Opensource/notebooklm-py');
 
-  // Multi-project container (e.g. ~/Dev/MyProject/dsh-plugin or ~/Dev/Opensource)
+  // Multi-project container (e.g. ~/Dev/MyProject/dsh-plugins or ~/Dev/Opensource)
   const containerPlan = resolveAutoIndexPlan(
-    '/Users/gc/Dev/MyProject/dsh-plugin',
+    '/Users/gc/Dev/MyProject/dsh-plugins',
     { autoIndexRoots: ['~/Dev'] },
   );
   assert.equal(containerPlan.kind, 'container-needs-selection');

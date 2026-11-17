@@ -12,7 +12,7 @@
 2. 输入此目录的绝对路径：
 
    ```text
-   /Users/gc/Dev/MyProject/dsh-plugin/dsh-zvec-grep
+   /Users/gc/Dev/MyProject/dsh-plugins/dsh-zvec-grep
    ```
 
 3. 安装后找到 `dsh-zvec-grep`，打开它的**启用开关**。
@@ -48,8 +48,8 @@ dsh plugin --profile web add link:/absolute/path/to/dsh-zvec-grep
 本插件默认配置了 `autoIndexRoots: ['~/Dev']`（见 [cordis.patch.yml](<cordis.patch.yml>)），搜索时的索引策略如下：
 
 1. **在 `~/Dev` 范围内（按子项目自动建索引）**：
-   - 当你在 `~/Dev` 下的任意具体项目（如 `~/Dev/Opensource/notebooklm-py`、`~/Dev/MyProject/OpenClawUsage`、`~/Dev/MyProject/dsh-plugin/dsh-gc-duolink`）中首次发起搜索时，若该项目尚无 `.zvec-grep` 索引，插件会**自动识别该项目根目录并在后台调用 `zg index <projectRoot> --mode server` 完成建索引**，随后立即返回搜索结果，无需手动提前运行 `zg index`。
-   - **防误扫保护**：如果传入的是 `~/Dev`、`~/Dev/MyProject`、`~/Dev/Opensource` 或 `~/Dev/MyProject/dsh-plugin` 这类包含多个项目的**上层容器目录**，插件不会把整个大目录扫成一个巨型索引，而是会自动列出检测到的子项目，让 Agent 直接改搜对应子项目或通过 `ask_user_question` 询问你要索引哪个子目录。
+   - 当你在 `~/Dev` 下的任意具体项目（如 `~/Dev/Opensource/notebooklm-py`、`~/Dev/MyProject/OpenClawUsage`、`~/Dev/MyProject/dsh-plugins/dsh-gc-duolink`）中首次发起搜索时，若该项目尚无 `.zvec-grep` 索引，插件会**自动识别该项目根目录并在后台调用 `zg index <projectRoot> --mode server` 完成建索引**，随后立即返回搜索结果，无需手动提前运行 `zg index`。
+   - **防误扫保护**：如果传入的是 `~/Dev`、`~/Dev/MyProject`、`~/Dev/Opensource` 或 `~/Dev/MyProject/dsh-plugins` 这类包含多个项目的**上层容器目录**，插件不会把整个大目录扫成一个巨型索引，而是会自动列出检测到的子项目，让 Agent 直接改搜对应子项目或通过 `ask_user_question` 询问你要索引哪个子目录。
 2. **在 `~/Dev` 范围外（自动弹窗询问）**：
    - 当搜索 `autoIndexRoots` 之外且尚未建索引的目录时，插件会触发 `[INDEX_MISSING_ASK_USER]` 提示，引导 Agent 调用 `ask_user_question` 询问你：**是否立即索引当前工作目录、指定其他目录建立索引，或暂不索引改用原生 `grep`**。
 

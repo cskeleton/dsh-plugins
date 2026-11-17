@@ -18,15 +18,15 @@ Independent plugins for [DeepSeek Harness](https://github.com/deepseek-ai/deepse
 Read that plugin's instructions first. For a local directory installation, select the **plugin subdirectory**, not this repository root, in DSH's Plugins GUI. DuoLink must be built before a source-directory installation. The Desktop profile is application-managed; use its supported GUI and documented procedures rather than changing a running profile externally.
 
 ```text
-/path/to/dsh-plugin/dsh-conversation-export
-/path/to/dsh-plugin/dsh-client-ui-copy-session-id
-/path/to/dsh-plugin/dsh-zvec-grep
-/path/to/dsh-plugin/dsh-gc-duolink
+/path/to/dsh-plugins/dsh-conversation-export
+/path/to/dsh-plugins/dsh-client-ui-copy-session-id
+/path/to/dsh-plugins/dsh-zvec-grep
+/path/to/dsh-plugins/dsh-gc-duolink
 ```
 
-Existing development installations can keep the same paths: consolidation does not add a `plugins/` directory or rename packages. Moving the checkout elsewhere is a separate operation requiring link updates.
+The checkout directory is `dsh-plugins`; consolidation does not add a `plugins/` directory or rename packages. Moving or renaming the checkout requires updating existing installation links.
 
-DuoLink's historical downloads remain under [Releases](https://github.com/cskeleton/dsh-plugin/releases). The other three plugins currently have source-directory installation instructions, not newly published release archives.
+DuoLink's historical downloads remain under [Releases](https://github.com/cskeleton/dsh-plugins/releases). The other three plugins currently have source-directory installation instructions, not newly published release archives.
 
 ## Development
 

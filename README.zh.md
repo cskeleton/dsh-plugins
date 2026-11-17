@@ -18,15 +18,15 @@
 先阅读相应插件的安装说明。在 DSH 插件页面添加本地目录时，选择**插件子目录**，不要选择仓库根目录。DuoLink 从源码目录安装前需要构建。Desktop profile 由应用管理，请遵循 GUI 和插件文档支持的操作，不要从外部修改运行中的 profile。
 
 ```text
-/path/to/dsh-plugin/dsh-conversation-export
-/path/to/dsh-plugin/dsh-client-ui-copy-session-id
-/path/to/dsh-plugin/dsh-zvec-grep
-/path/to/dsh-plugin/dsh-gc-duolink
+/path/to/dsh-plugins/dsh-conversation-export
+/path/to/dsh-plugins/dsh-client-ui-copy-session-id
+/path/to/dsh-plugins/dsh-zvec-grep
+/path/to/dsh-plugins/dsh-gc-duolink
 ```
 
-此次整合不增加 `plugins/` 层，也不修改包名，因此已有开发安装可以继续使用相同路径。今后移动整个 checkout 时，需要另行处理安装链接。
+checkout 目录名为 `dsh-plugins`；此次整合不增加 `plugins/` 层，也不修改包名。移动或重命名 checkout 时，需要另行更新已有安装链接。
 
-DuoLink 的历史安装包保留在 [Releases](https://github.com/cskeleton/dsh-plugin/releases)。其他三个插件仍按各自文档从源码目录安装，本次不新增发布包。
+DuoLink 的历史安装包保留在 [Releases](https://github.com/cskeleton/dsh-plugins/releases)。其他三个插件仍按各自文档从源码目录安装，本次不新增发布包。
 
 ## 开发与测试
 
